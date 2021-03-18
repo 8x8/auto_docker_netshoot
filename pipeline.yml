@@ -20,6 +20,9 @@ jira:
   description: "K8S netshoot helm chart update"
 
 stages:
+  verify:
+    syntax:
+      - helm template helm/netshoot > /dev/null
   security:
     branch: (?!x)x
     sonarRegex: (?!x)x
@@ -27,7 +30,9 @@ stages:
   publish:
     artifact:
       docker:
-        - build 8x8/netshoot:${ART_VERSION} .
-        - push 8x8/netshoot:${ART_VERSION}
+        - build 8x8/netshoot .
+        - push 8x8/netshoot
+      helm:
+        - push helm/netshoot
   cd:
     enabled: false
