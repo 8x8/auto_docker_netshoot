@@ -1,0 +1,38 @@
+version: "1.0"
+
+buildInfo:
+  buildName: netshoot
+
+sonar:
+  qgName: netshoot
+  projectName: netshoot
+  blockerIssueThreshold: 50
+  coverageThreshold: 0
+  smellsCountThreshold: 5000
+  unitTestSuccessThreshold: 0
+
+jira:
+  projectName: res
+  assignee: ljohnson
+  components: Platform
+  product: VO
+  createVersionObject: false
+  description: "K8S netshoot helm chart update"
+
+stages:
+  verify:
+    syntax:
+      - helm template helm/netshoot > /dev/null
+  security:
+    branch: (?!x)x
+    sonarRegex: (?!x)x
+    owaspDependencyRegex: (?!x)x
+  publish:
+    artifact:
+      docker:
+        - build 8x8/netshoot .
+        - push 8x8/netshoot
+      helm:
+        - push helm/netshoot
+  cd:
+    enabled: false
