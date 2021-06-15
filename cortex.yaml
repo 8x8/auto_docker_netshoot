@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: auto_docker_netshoot
+  x-cortex-git:
+    github:
+      repository: 8x8/auto_docker_netshoot
+  x-cortex-tag: auto_docker_netshoot
+  x-cortex-link:
+  x-cortex-owners:
+    - type: EMAIL
+      email: lance.johnson@8x8.com
+  x-cortex-service-groups:
+    - automation
