@@ -9,7 +9,5 @@ info:
   x-cortex-owners:
     - type: EMAIL
       email: lance.johnson@8x8.com
-    - type: EMAIL
-      email: res@8x8.com
   x-cortex-service-groups:
     - automation
