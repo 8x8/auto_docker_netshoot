@@ -6,8 +6,16 @@ info:
       repository: 8x8/auto_docker_netshoot
   x-cortex-tag: auto_docker_netshoot
   x-cortex-link:
+    - url: https://github.com/8x8/auto_docker_netshoot/blob/master/README.md
+      name: Wiki
+      type: DOCUMENTATION
+    - url: https://res-jenkins.es.8x8.com/job/cpe-netshoot
+      name: Jenkins Build
+      type: BUILD
   x-cortex-owners:
     - type: EMAIL
       email: lance.johnson@8x8.com
   x-cortex-service-groups:
     - automation
+    - nonProductionAsset
+  description: https://github.com/8x8/auto_docker_netshoot/blob/master/README.md
