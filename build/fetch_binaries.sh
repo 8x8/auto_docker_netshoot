@@ -51,6 +51,13 @@ get_termshark() {
   esac
 }
 
+get_sysbench() {
+  VERSION=$(get_latest_release akopytov/sysbench)
+  LINK="http://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/sysbench-${VERSION}-r0.apk"
+  wget "$LINK" -O /tmp/sysbench.apk
+}
+
 get_ctop
 get_calicoctl
 get_termshark
+get_sysbench

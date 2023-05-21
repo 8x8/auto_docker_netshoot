@@ -93,9 +93,11 @@ To troubleshoot these issues, `netshoot` includes a set of powerful tools as rec
     py-crypto
     py2-virtualenv
     python2
+    redis
     scapy
     socat
     strace
+    sysbench
     tcpdump
     tcptraceroute
     termshark
@@ -103,6 +105,7 @@ To troubleshoot these issues, `netshoot` includes a set of powerful tools as rec
     util-linux
     vim
     websocat
+    yq
 
 ## **Sample Use-cases** 
 

@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN /tmp/fetch_binaries.sh
 
-FROM alpine:3.13
+FROM alpine:3.15
 
 RUN set -ex \
     && apk update \
@@ -53,6 +53,7 @@ RUN set -ex \
     nmap-nping \
     openssl \
     postgresql-client \
+    redis \
     scapy \
     socat \
     strace \
@@ -60,7 +61,12 @@ RUN set -ex \
     tcptraceroute \
     tshark \
     util-linux \
-    vim 
+    vim \
+    yq
+
+# Installing sysbench - scriptable multi-threaded benchmarking tool
+COPY --from=fetcher /tmp/sysbench.apk /tmp/sysbench.apk
+RUN apk add --allow-untrusted /tmp/sysbench.apk
 
 # Installing ctop - top-like container monitor
 COPY --from=fetcher /tmp/ctop /usr/local/bin/ctop
