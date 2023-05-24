@@ -46,6 +46,7 @@ spec:
       imagePullSecrets:
 {{ toYaml . | indent 6 }}
       {{- end }}
+      restartPolicy: Always
       containers:
       - name: {{ include "netshoot.name" . }}
         image: {{ default "8x8/netshoot" .Values.netshoot.image.url }}:{{ default "latest" .Values.netshoot.image.tag }}
@@ -60,7 +61,6 @@ spec:
             name:  {{ include "netshoot.name" . }}-env
         - secretRef:
             name:  {{ include "netshoot.name" . }}-secrets
-        restartPolicy: Always
       {{- with .Values.netshoot.nodeSelector }}
         nodeSelector:
 {{ toYaml . | indent 8 }}
