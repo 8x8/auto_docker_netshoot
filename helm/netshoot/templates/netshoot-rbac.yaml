@@ -62,3 +62,13 @@ subjects:
 - kind: ServiceAccount
   name: netshoot-sa
   namespace: utilities
+
+---
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: netshoot-sa-token
+  namespace: utilities
+  annotations:
+    kubernetes.io/service-account.name: netshoot-sa
