@@ -1,0 +1,68 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: auto_docker_netshoot
+  title: Auto Docker Netshoot
+  description: A Docker-based network troubleshooting tool
+  tags:
+    - automation
+    - docker
+    - network-tools
+  annotations:
+    backstage.io/kubernetes-id: auto-docker-netshoot
+    backstage.io/kubernetes-namespace: default
+    github.com/project-slug: 8x8/auto_docker_netshoot
+    pagerduty.com/service-id: TODO
+    sonarqube.org/project-key: com._8x8:auto_docker_netshoot
+    grafana/dashboard-selector: auto_docker_netshoot
+    grafana/alert-label-selector: 'component=auto_docker_netshoot'
+  links:
+    - url: https://github.com/8x8/auto_docker_netshoot/actions
+      title: Github Actions Build
+      type: build
+      icon: dashboard
+    - url: TODO
+      title: Cloud8 Config
+      type: config
+      icon: github
+    - url: TODO
+      title: GDS deploy tool | GoCD pipeline
+      type: build
+      icon: catalog
+    - url: TODO
+      title: Sonar Project
+      type: dashboard
+      icon: dashboard
+    - url: https://github.com/8x8/auto_docker_netshoot/blob/master/README.md
+      title: Wiki
+      type: documentation
+      icon: docs
+    - url: https://res-jenkins.es.8x8.com/job/cpe-netshoot
+      title: Jenkins Build
+      type: build
+      icon: dashboard
+    - url: TODO
+      title: Grafana
+      type: metrics
+      icon: dashboard
+    - url: TODO
+      title: Logs
+      type: logs
+      icon: dashboard
+spec:
+  type: service
+  lifecycle: non-production
+  owner: observabilty-ops
+  system: TODO system name
+  # dependsOn:
+  #   - component:default/other-component
+  # providesApis:
+  #   - api-name
+# ---
+# kind: Resource
+# metadata:
+#     name: TODO - database/service name
+#     description: TODO - resource description
+# spec:
+#     type: TODO database/kafka
+#     owner: observabilty-ops
